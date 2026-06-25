@@ -25,17 +25,14 @@
 }
 html,body{width:100%;height:100%;overflow:hidden;background:var(--cream);font-family:var(--sans);color:var(--ink)}
 
-/* paper texture */
 body::before{
   content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
   opacity:0.5;
 }
 
-/* LAYOUT */
 #layout{display:flex;width:100vw;height:100vh;position:relative;z-index:1;overflow:hidden}
 
-/* SIDEBAR */
 #sidebar{
   width:260px;min-width:260px;height:100vh;
   background:var(--warm-white);
@@ -100,7 +97,6 @@ body::before{
 }
 .social-btn:hover{background:var(--sage-light);border-color:var(--sage);color:var(--sage)}
 
-/* MAIN */
 #main{flex:1;height:100vh;overflow:hidden;position:relative}
 .section{
   position:absolute;inset:0;overflow-y:auto;
@@ -115,7 +111,6 @@ body::before{
 .section::-webkit-scrollbar-track{background:transparent}
 .section::-webkit-scrollbar-thumb{background:rgba(107,143,113,0.3);border-radius:4px}
 
-/* HERO */
 .hero-eyebrow{
   font-family:var(--mono);font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;
   color:var(--sage);margin-bottom:1.2rem;
@@ -155,7 +150,6 @@ body::before{
 }
 .btn-secondary:hover{border-color:var(--rust);color:var(--rust);background:var(--rust-light);transform:translateY(-2px)}
 
-/* STAT CARDS */
 .stat-strip{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
 .stat-card{
   flex:1;min-width:120px;
@@ -169,7 +163,6 @@ body::before{
 .stat-num{font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--sage);display:block}
 .stat-lbl{font-size:0.65rem;color:var(--ink-30);font-family:var(--mono);letter-spacing:0.1em;text-transform:uppercase;margin-top:0.2rem}
 
-/* CHIPS */
 .chip-row{display:flex;flex-wrap:wrap;gap:0.5rem}
 .chip{
   padding:0.3rem 0.9rem;border-radius:100px;
@@ -180,7 +173,6 @@ body::before{
 .chip:hover{border-color:var(--sage);color:var(--sage);background:var(--sage-light)}
 .chip.lit{border-color:rgba(107,143,113,0.4);color:var(--sage);background:var(--sage-light)}
 
-/* GLASS / PAPER CARDS */
 .glass-card{
   background:var(--warm-white);
   border:1px solid var(--ink-10);
@@ -195,13 +187,11 @@ body::before{
 .glass-card:hover{border-color:rgba(107,143,113,0.3);transform:translateY(-4px);box-shadow:0 16px 40px rgba(26,25,21,0.09)}
 .glass-card:hover::before{opacity:1}
 
-/* SECTION HEADERS */
 .sec-header{margin-bottom:2rem}
 .sec-tag{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage);margin-bottom:0.5rem;display:block}
 .sec-title{font-family:var(--serif);font-size:2rem;font-weight:400;letter-spacing:-0.01em;color:var(--ink)}
 .sec-line{width:50px;height:2px;background:linear-gradient(90deg,var(--sage),var(--rust));border-radius:2px;margin-top:0.6rem}
 
-/* PROJECTS */
 .proj-grid{display:flex;flex-direction:column;gap:1.2rem}
 .proj-card{
   background:var(--warm-white);
@@ -215,7 +205,7 @@ body::before{
   border-radius:16px 0 0 16px;
 }
 .proj-card:hover{border-color:rgba(107,143,113,0.3);transform:translateX(4px);box-shadow:0 8px 28px rgba(26,25,21,0.08)}
-.proj-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:0.7rem}
+.proj-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:0.7rem;flex-wrap:wrap}
 .proj-tag{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:100px;background:var(--sage-light);border:1px solid rgba(107,143,113,0.3);color:var(--sage)}
 .proj-title{font-family:var(--serif);font-size:1.15rem;font-weight:400;margin-bottom:0.3rem;letter-spacing:-0.01em;color:var(--ink)}
 .proj-stack{font-family:var(--mono);font-size:0.6rem;color:var(--ink-30);letter-spacing:0.04em;margin-bottom:0.7rem}
@@ -223,11 +213,30 @@ body::before{
 .proj-points{list-style:none;display:flex;flex-direction:column;gap:0.3rem;margin-bottom:1rem}
 .proj-points li{font-size:0.75rem;color:var(--ink-60);display:flex;gap:0.5rem;align-items:flex-start;line-height:1.6}
 .proj-points li::before{content:'▹';color:var(--sage);flex-shrink:0}
-.proj-gh{display:inline-flex;align-items:center;gap:0.4rem;padding:0.35rem 1rem;border-radius:100px;border:1px solid var(--ink-10);color:var(--ink-60);font-family:var(--mono);font-size:0.63rem;text-decoration:none;transition:all 0.2s;letter-spacing:0.06em}
-.proj-gh:hover{border-color:var(--sage);color:var(--sage);background:var(--sage-light)}
-.proj-gh svg{width:12px;height:12px;fill:currentColor}
 
-/* SKILLS */
+/* UPDATED: proj-links row */
+.proj-links{display:flex;gap:0.5rem;flex-wrap:wrap}
+.proj-gh,.proj-demo{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  padding:0.35rem 1rem;border-radius:100px;
+  font-family:var(--mono);font-size:0.63rem;text-decoration:none;
+  transition:all 0.2s;letter-spacing:0.06em;
+}
+.proj-gh{border:1px solid var(--ink-10);color:var(--ink-60)}
+.proj-gh:hover{border-color:var(--sage);color:var(--sage);background:var(--sage-light)}
+.proj-demo{border:1px solid rgba(181,96,58,0.3);color:var(--rust);background:var(--rust-light)}
+.proj-demo:hover{background:rgba(181,96,58,0.2);border-color:var(--rust);transform:translateY(-1px)}
+.proj-gh svg,.proj-demo svg{width:12px;height:12px;fill:currentColor;flex-shrink:0}
+
+/* LIVE badge */
+.live-badge{
+  display:inline-flex;align-items:center;gap:0.3rem;
+  font-family:var(--mono);font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;
+  padding:0.18rem 0.55rem;border-radius:100px;
+  background:rgba(107,143,113,0.12);border:1px solid rgba(107,143,113,0.35);color:var(--sage);
+}
+.live-dot{width:5px;height:5px;border-radius:50%;background:var(--sage);animation:blink 1.5s ease-in-out infinite;flex-shrink:0}
+
 .skill-groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
 .skill-group{background:var(--warm-white);border:1px solid var(--ink-10);border-radius:12px;padding:1.2rem;transition:all 0.25s}
 .skill-group:hover{border-color:rgba(107,143,113,0.3);box-shadow:0 4px 16px rgba(26,25,21,0.06)}
@@ -237,7 +246,6 @@ body::before{
 .sk:hover{background:var(--sage-light);border-color:rgba(107,143,113,0.3);color:var(--sage)}
 .sk.hot{background:var(--sage-light);border-color:rgba(107,143,113,0.35);color:var(--sage)}
 
-/* CERTS / EDU */
 .row-list{display:flex;flex-direction:column;gap:0.8rem}
 .row-item{
   background:var(--warm-white);border:1px solid var(--ink-10);
@@ -257,7 +265,6 @@ body::before{
   color:var(--sage);white-space:nowrap;
 }
 
-/* CONTACT */
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-bottom:2rem}
 .c-tile{
   background:var(--warm-white);border:1px solid var(--ink-10);
@@ -272,7 +279,6 @@ body::before{
 .pill-row{display:flex;flex-wrap:wrap;gap:0.4rem}
 .pill{padding:0.3rem 0.9rem;border-radius:100px;font-size:0.7rem;font-weight:500;border:1px solid rgba(107,143,113,0.35);color:var(--sage);background:var(--sage-light);font-family:var(--sans)}
 
-/* ABOUT GRID */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
 @media(max-width:700px){.about-grid{grid-template-columns:1fr}}
 .about-card{background:var(--warm-white);border:1px solid var(--ink-10);border-radius:12px;padding:1.2rem;transition:all 0.25s}
@@ -291,7 +297,6 @@ body::before{
 <body>
 
 <div id="layout">
-  <!-- SIDEBAR -->
   <aside id="sidebar">
     <div class="avatar-wrap">S</div>
     <div class="sidebar-name">Sreeja Penumudi</div>
@@ -315,7 +320,6 @@ body::before{
     </div>
   </aside>
 
-  <!-- MAIN -->
   <main id="main">
 
     <!-- HOME -->
@@ -347,7 +351,7 @@ body::before{
         <span class="chip">Python</span>
         <span class="chip">MLOps</span>
         <span class="chip">Docker</span>
-        <span class="chip">Laravel</span>
+        <span class="chip">Django</span>
         <span class="chip">Scikit-Learn</span>
         <span class="chip">MLflow</span>
       </div>
@@ -369,7 +373,7 @@ body::before{
       <div class="about-grid">
         <div class="about-card"><span class="about-icon">🤖</span><div class="about-title">AI &amp; LLM Integration</div><div class="about-body">Designing effective prompts for LLM APIs and embedding AI-driven features into real products from scratch.</div></div>
         <div class="about-card"><span class="about-icon">⚛️</span><div class="about-title">Frontend Development</div><div class="about-body">React, TypeScript, modern component architectures — responsive, performant, beautifully crafted UI.</div></div>
-        <div class="about-card"><span class="about-icon">🐳</span><div class="about-title">MLOps &amp; Backend</div><div class="about-body">Dockerised ML pipelines, MLflow experiment tracking, Laravel / Django APIs, and GitHub Actions CI/CD.</div></div>
+        <div class="about-card"><span class="about-icon">🐳</span><div class="about-title">MLOps &amp; Backend</div><div class="about-body">Dockerised ML pipelines, MLflow experiment tracking, Django APIs, and GitHub Actions CI/CD.</div></div>
         <div class="about-card"><span class="about-icon">🌐</span><div class="about-title">Remote-Ready</div><div class="about-body">Async-first communicator, clear documentation, self-driven learner and hackathon organiser.</div></div>
       </div>
     </div>
@@ -395,9 +399,9 @@ body::before{
         <div class="skill-group"><div class="skill-cat">Languages</div><div class="skill-pills"><span class="sk hot">Python</span><span class="sk hot">TypeScript</span><span class="sk hot">JavaScript</span><span class="sk">Java</span><span class="sk">SQL</span><span class="sk">PHP</span></div></div>
         <div class="skill-group"><div class="skill-cat">AI / LLM</div><div class="skill-pills"><span class="sk hot">Prompt Eng</span><span class="sk hot">LLM APIs</span><span class="sk">NLP</span><span class="sk">Scikit-Learn</span><span class="sk">TensorFlow</span><span class="sk">Pandas</span></div></div>
         <div class="skill-group"><div class="skill-cat">Frontend</div><div class="skill-pills"><span class="sk hot">React</span><span class="sk hot">TypeScript</span><span class="sk">Node.js</span><span class="sk">Express</span><span class="sk">MongoDB</span></div></div>
-        <div class="skill-group"><div class="skill-cat">Backend</div><div class="skill-pills"><span class="sk hot">Laravel</span><span class="sk hot">PHP</span><span class="sk">Django</span><span class="sk">Spring Boot</span><span class="sk">MySQL</span></div></div>
-        <div class="skill-group"><div class="skill-cat">MLOps / DevOps</div><div class="skill-pills"><span class="sk hot">Docker</span><span class="sk hot">CI/CD</span><span class="sk">MLflow</span><span class="sk">GitHub Actions</span><span class="sk">Git</span></div></div>
-        <div class="skill-group"><div class="skill-cat">Cloud</div><div class="skill-pills"><span class="sk hot">AWS</span><span class="sk hot">GCP</span><span class="sk">OCI</span><span class="sk">Streamlit</span><span class="sk">Salesforce</span></div></div>
+        <div class="skill-group"><div class="skill-cat">Backend</div><div class="skill-pills"><span class="sk hot">Django</span><span class="sk hot">FastAPI</span><span class="sk">Spring Boot</span><span class="sk">MySQL</span><span class="sk">PostgreSQL</span></div></div>
+        <div class="skill-group"><div class="skill-cat">MLOps / DevOps</div><div class="skill-pills"><span class="sk hot">Docker</span><span class="sk hot">CI/CD</span><span class="sk">MLflow</span><span class="sk">GitHub Actions</span><span class="sk">Kafka</span><span class="sk">Flink</span></div></div>
+        <div class="skill-group"><div class="skill-cat">Cloud</div><div class="skill-pills"><span class="sk hot">Railway</span><span class="sk hot">Streamlit Cloud</span><span class="sk">OCI</span><span class="sk">Salesforce</span></div></div>
       </div>
     </div>
 
@@ -469,26 +473,101 @@ function type(){
 }
 type();
 
-// PROJECTS
+// SVG ICONS
+function ghSvg(){return`<svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>`}
+function extSvg(){return`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`}
+function liveSvg(){return`<span class="live-badge"><span class="live-dot"></span>LIVE</span>`}
+
+// PROJECTS DATA
 const GH='https://github.com/2200032705-SREEJA';
 const PROJECTS=[
-  {tag:'AI / NLP',title:'ESG Risk Scorer',stack:'Python · Streamlit · NLP · Scikit-Learn · Pandas',desc:'An AI-powered platform that reads financial news and automatically computes ESG risk scores — giving investors a data-backed lens for ethical decision-making.',points:['Ingested and preprocessed financial news; applied NLP classifiers to detect ESG signals.','Trained ML models scoring organisations across all three ESG dimensions with explainability outputs.','Built an interactive Streamlit dashboard with time-series charts and company comparison views.','Automated ESG assessment replacing hours of manual analyst reading with real-time scores.']},
-  {tag:'Machine Learning',title:'Sales Forecasting ML',stack:'Python · Scikit-Learn · Pandas · NumPy · Matplotlib',desc:'A machine learning system that analyses historical supermarket sales data and forecasts future demand — helping retailers optimise stock and reduce waste.',points:['End-to-end EDA identifying seasonality, product category trends, and key demand drivers.','Built and compared Linear Regression, Random Forest, and Gradient Boosting models.','Engineered lag variables, rolling averages, and date encodings improving forecast accuracy.','Clean evaluation reports with MAE/RMSE metrics and residual plots.']},
-  {tag:'MLOps',title:'MLOps Trading Signal Pipeline',stack:'Python · Docker · MLflow · GitHub Actions · CI/CD',desc:'A production-grade Dockerised MLOps pipeline that ingests market data, generates trading signals, and tracks every experiment reproducibly.',points:['Containerised the entire pipeline with Docker — consistent across dev, staging, and production.','Integrated MLflow for experiment tracking: logs hyperparameters, accuracy, and artefacts per run.','Signal-generation logic processing OHLCV data emitting buy/sell/hold signals from configurable indicators.','GitHub Actions CI/CD automatically tests and publishes a new Docker image on every push.']},
-  {tag:'Java Full Stack',title:'Learning Outcomes Tracker',stack:'Java · Spring Boot · MySQL · HTML · CSS · JavaScript',desc:'A web-based academic management platform for universities, bridging what students learn with what institutions formally measure.',points:['Java Spring Boot backend handling attendance, assignment scores, and exam results at scale.','Automated learning outcome evaluation mapping performance against defined course outcomes.','Reporting module generating per-student and programme-level reports for NAAC accreditation.','Role-based UI: dashboards for faculty (data management) and students (progress tracking).']},
-  {tag:'MERN + Django',title:'Online Voting System',stack:'MongoDB · Express · React · Node.js · JWT · Django',desc:'A secure end-to-end digital voting platform for campus elections, built in two versions to demonstrate stack versatility.',points:['JWT-based authentication with one-vote-per-user enforcement and encrypted ballot storage.','Responsive React frontend guiding voters through registration → candidate selection → confirmation.','Live results dashboard updating dynamically as votes are counted with visual breakdowns.','Django version adds voter registration, candidate management, and admin controls.']}
+  {
+    tag:'AI / NLP',
+    title:'ESG Risk Scorer',
+    stack:'Python · Streamlit · NLP · Scikit-Learn · Pandas',
+    desc:'An AI-powered platform that reads financial news and automatically computes ESG risk scores — giving investors a data-backed lens for ethical decision-making.',
+    points:[
+      'Ingested and preprocessed financial news; applied NLP classifiers to detect ESG signals.',
+      'Trained ML models scoring organisations across all three ESG dimensions with explainability outputs.',
+      'Built an interactive Streamlit dashboard with time-series charts and company comparison views.',
+      'Automated ESG assessment replacing hours of manual analyst reading with real-time scores.'
+    ],
+    demo:'https://esg-risk-scorer.streamlit.app/',
+    gh: GH + '/ESG-Risk-Monitor'
+  },
+  {
+    tag:'Full Stack · Django',
+    title:'Online Voting System — VoteBharat',
+    stack:'Django · PostgreSQL · Railway · JWT · HTML · CSS · JavaScript',
+    desc:'A secure end-to-end digital voting platform for elections, live-deployed on Railway. Features an EVM-style voting panel, age-verified voter registration, one-vote-per-voter enforcement, and real-time results.',
+    points:[
+      'JWT-based authentication with strict one-vote-per-user enforcement and encrypted ballot storage.',
+      'EVM-style voting panel with party symbols, live vote selection and instant confirmation feedback.',
+      'Age-gated voter registration with Voter ID (EPIC card) format validation and Aadhaar optional field.',
+      'Live-deployed on Railway with PostgreSQL — accessible publicly at the demo URL.'
+    ],
+    demo:'https://online-voting-system-production-5ae2.up.railway.app/',
+    gh: GH + '/Online-Voting-System'
+  },
+  {
+    tag:'Machine Learning',
+    title:'Sales Forecasting ML',
+    stack:'Python · Scikit-Learn · Pandas · NumPy · Matplotlib',
+    desc:'A machine learning system that analyses historical supermarket sales data and forecasts future demand — helping retailers optimise stock and reduce waste.',
+    points:[
+      'End-to-end EDA identifying seasonality, product category trends, and key demand drivers.',
+      'Built and compared Linear Regression, Random Forest, and Gradient Boosting models.',
+      'Engineered lag variables, rolling averages, and date encodings improving forecast accuracy.',
+      'Clean evaluation reports with MAE/RMSE metrics and residual plots.'
+    ],
+    demo:null,
+    gh: GH
+  },
+  {
+    tag:'MLOps',
+    title:'MLOps Trading Signal Pipeline',
+    stack:'Python · Docker · MLflow · GitHub Actions · CI/CD',
+    desc:'A production-grade Dockerised MLOps pipeline that ingests market data, generates trading signals, and tracks every experiment reproducibly.',
+    points:[
+      'Containerised the entire pipeline with Docker — consistent across dev, staging, and production.',
+      'Integrated MLflow for experiment tracking: logs hyperparameters, accuracy, and artefacts per run.',
+      'Signal-generation logic processing OHLCV data emitting buy/sell/hold signals from configurable indicators.',
+      'GitHub Actions CI/CD automatically tests and publishes a new Docker image on every push.'
+    ],
+    demo:null,
+    gh: GH
+  },
+  {
+    tag:'Java Full Stack',
+    title:'Learning Outcomes Tracker',
+    stack:'Java · Spring Boot · MySQL · HTML · CSS · JavaScript',
+    desc:'A web-based academic management platform for universities, bridging what students learn with what institutions formally measure.',
+    points:[
+      'Java Spring Boot backend handling attendance, assignment scores, and exam results at scale.',
+      'Automated learning outcome evaluation mapping performance against defined course outcomes.',
+      'Reporting module generating per-student and programme-level reports for NAAC accreditation.',
+      'Role-based UI: dashboards for faculty (data management) and students (progress tracking).'
+    ],
+    demo:null,
+    gh: GH
+  }
 ];
 
-function ghSvg(){return`<svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>`}
-
+// RENDER PROJECTS
 const list=document.getElementById('proj-list');
 PROJECTS.forEach(p=>{
+  const linksHtml=`
+    <div class="proj-links">
+      <a class="proj-gh" href="${p.gh}" target="_blank">${ghSvg()} GitHub</a>
+      ${p.demo ? `<a class="proj-demo" href="${p.demo}" target="_blank">${extSvg()} Live Demo</a>${liveSvg()}` : ''}
+    </div>`;
   list.innerHTML+=`<div class="proj-card">
-    <div class="proj-top"><span class="proj-tag">${p.tag}</span><a class="proj-gh" href="${GH}" target="_blank">${ghSvg()} GitHub</a></div>
+    <div class="proj-top"><span class="proj-tag">${p.tag}</span></div>
     <div class="proj-title">${p.title}</div>
     <div class="proj-stack">${p.stack}</div>
     <div class="proj-desc">${p.desc}</div>
     <ul class="proj-points">${p.points.map(pt=>`<li>${pt}</li>`).join('')}</ul>
+    ${linksHtml}
   </div>`;
 });
 
